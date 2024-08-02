@@ -172,3 +172,16 @@ export default {
     },
   };
   </script>
+
+<style scoped>
+.controls {
+  margin-bottom: 20px;
+}
+select {
+  margin-right: 10px;
+  padding: 5px;
+}
+button {
+  margin-left: 10px;
+}
+</style>
