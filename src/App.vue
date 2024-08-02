@@ -1,19 +1,14 @@
-<template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Header></router-link>
-      <router-link to="/productlist">ProductList</router-link>
-    </nav>
-    <router-view></router-view>
-  </div>
-</template>
+<script setup>
+import Header from './components/Header.vue';
 
-<script>
-export default {
-  name: 'App'
-}
 </script>
 
-<style>
+<template>
+  <div>
+    <Header/>
+     </div>
+</template>
+
+<style scoped>
 
 </style>
