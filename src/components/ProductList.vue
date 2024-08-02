@@ -102,3 +102,17 @@
       </div>
     </div>
   </template>
+
+<script>
+export default {
+  data() {
+    return {
+      products: [],
+      filteredProducts: [],
+      categories: [],
+      selectedCategory: '',
+      sortOrder: 'default', // Default sort order
+      loading: true,
+      error: null,
+    };
+  },
