@@ -31,3 +31,15 @@
             />
           </svg>
         </button>
+        <div class="hidden lg:flex items-center space-x-4" id="navbar-dropdown">
+  
+  <router-link to="/wishlist" class="text-gray-300 hover:text-teal-300">Wishlist</router-link>
+  <router-link to="/cart" class="relative flex items-center text-gray-300 hover:text-teal-300">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
+    >
