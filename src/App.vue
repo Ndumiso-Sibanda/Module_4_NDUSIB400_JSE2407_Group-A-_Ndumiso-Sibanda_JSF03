@@ -1,18 +1,18 @@
+<!-- src/App.vue -->
 <template>
   <div id="app">
     <Header />
-    <ProductList />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'; 
-import ProductList from './components/ProductList.vue'; 
+import Header from './components/Header.vue';
+
 export default {
   name: 'App',
   components: {
     Header,
-    ProductList,
   },
 };
 </script>
