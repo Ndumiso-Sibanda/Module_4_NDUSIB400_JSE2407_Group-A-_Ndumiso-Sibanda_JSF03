@@ -132,3 +132,16 @@ export default {
           this.loading = false;
         }
       },
+      getCategories() {
+        this.categories = [...new Set(this.products.map((product) => product.category))];
+      },
+      filterProducts() {
+        if (this.selectedCategory === '') {
+          this.filteredProducts = [...this.products];
+        } else {
+          this.filteredProducts = this.products.filter(
+            (product) => product.category === this.selectedCategory
+          );
+        }
+        this.applySorting(); // Ensure sorting is applied after filtering
+      },
