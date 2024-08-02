@@ -111,7 +111,7 @@ export default {
       filteredProducts: [],
       categories: [],
       selectedCategory: '',
-      sortOrder: 'default', // Default sort order
+      sortOrder: 'default', 
       loading: true,
       error: null,
     };
@@ -143,5 +143,19 @@ export default {
             (product) => product.category === this.selectedCategory
           );
         }
-        this.applySorting(); // Ensure sorting is applied after filtering
+        this.applySorting(); 
       },
+      applySorting() {
+        switch (this.sortOrder) {
+          case "asc":
+            this.filteredProducts.sort((a, b) => a.price - b.price);
+            break;
+          case "desc":
+            this.filteredProducts.sort((a, b) => b.price - a.price);
+            break;
+          case "default":
+          default:
+            
+            this.filteredProducts = [...this.products]; 
+            break;
+        }
