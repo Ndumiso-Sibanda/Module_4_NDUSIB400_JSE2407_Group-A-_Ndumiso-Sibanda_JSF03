@@ -1,14 +1,19 @@
-<script setup>
-import Header from './components/Header.vue';
-
-</script>
-
 <template>
-  <div>
-    <Header/>
-     </div>
+  <div id="app">
+    <Header />
+    <ProductList />
+  </div>
 </template>
 
-<style scoped>
+<script>
+import Header from './components/Header.vue'; 
+import ProductList from './components/ProductList.vue'; 
+export default {
+  name: 'App',
+  components: {
+    Header,
+    ProductList,
+  },
+};
+</script>
 
-</style>
