@@ -60,3 +60,9 @@
                 <div class="text-base line-clamp-2 font-extrabold text-slate-500 leading-snug">
                   <h2>$ {{ product.price }}</h2>
                 </div>
+                <div class="flex mt-1 space-x-2 my-3">
+                  <div class="justify-start flex-1">
+                    <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                      {{ product.category }}
+                    </span>
+                  </div>
