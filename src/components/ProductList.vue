@@ -123,3 +123,12 @@ export default {
           if (!response.ok) {
             throw new Error('Failed to fetch products');
           }
+          this.products = await response.json();
+          this.filteredProducts = [...this.products];
+          this.getCategories();
+        } catch (err) {
+          this.error = err.message;
+        } finally {
+          this.loading = false;
+        }
+      },
