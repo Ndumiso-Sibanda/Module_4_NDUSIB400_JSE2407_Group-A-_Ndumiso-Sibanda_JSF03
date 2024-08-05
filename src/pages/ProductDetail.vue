@@ -14,5 +14,29 @@
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      product: {},
+      loading: true,
+    };
+  },
+  methods: {
+    fetchProduct() {
+      const productId = this.$route.params.id;
+      fetch(`https://fakestoreapi.com/products/${productId}`)
+        .then(response => response.json())
+        .then(data => {
+          this.product = data;
+          this.loading = false;
+        });
+    },
+    goBack() {
+      this.$router.push('/');
+    },
+  },
+  created() {
+    this.fetchProduct();
+  },
+  };
   </script>
