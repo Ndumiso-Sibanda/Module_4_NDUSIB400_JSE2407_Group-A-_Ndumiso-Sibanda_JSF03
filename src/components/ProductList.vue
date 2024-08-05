@@ -146,7 +146,7 @@
             (product) => product.category === this.selectedCategory
           );
         }
-        this.applySorting(); 
+        this.applySorting(); // Ensure sorting is applied after filtering
       },
       applySorting() {
         switch (this.sortOrder) {
@@ -158,7 +158,14 @@
             break;
           case "default":
           default:
-            this.filteredProducts = [...this.products]; 
+            if (this.selectedCategory !== '') {
+              // Retain the filtered products if a category is selected
+              this.filteredProducts = this.products.filter(
+                (product) => product.category === this.selectedCategory
+              );
+            } else {
+              this.filteredProducts = [...this.products];
+            }
             break;
         }
       },
@@ -169,13 +176,14 @@
       },
       addToCart(product) {
         console.log('Add to cart:', product);
-      },
+      }
     },
     mounted() {
       this.getProducts();
-    },
+    }
   };
   </script>
+  
   
   <style scoped>
   .controls {
