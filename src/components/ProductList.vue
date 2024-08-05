@@ -33,29 +33,30 @@
   
                 <!-- Star Ratings -->
                 <div class="flex items-center mb-2">
-                  <svg
-                    v-for="index in Math.floor(product.rating.rate)"
-                    :key="'filled-' + index"
-                    class="w-4 h-4 text-yellow-500"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15.27L16.18 18l-1.64-7.03L18 7.19l-7.19-.61L10 0 9.19 6.59 2 7.19l5.46 3.76L5.82 18 10 15.27z"/>
-                  </svg>
-  
-                  <svg
-                    v-for="index in 5 - Math.ceil(product.rating.rate)"
-                    :key="'empty-' + index"
-                    class="w-4 h-4 text-gray-300"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15.27L16.18 18l-1.64-7.03L18 7.19l-7.19-.61L10 0 9.19 6.59 2 7.19l5.46 3.76L5.82 18 10 15.27z"/>
-                  </svg>
+                  <template v-for="index in 5">
+                    <svg
+                      v-if="index <= Math.floor(product.rating.rate)"
+                      :key="'filled-' + product.id + '-' + index"
+                      class="w-4 h-4 text-yellow-500"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15.27L16.18 18l-1.64-7.03L18 7.19l-7.19-.61L10 0 9.19 6.59 2 7.19l5.46 3.76L5.82 18 10 15.27z"/>
+                    </svg>
+                    <svg
+                      v-else
+                      :key="'empty-' + product.id + '-' + index"
+                      class="w-4 h-4 text-gray-300"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 15.27L16.18 18l-1.64-7.03L18 7.19l-7.19-.61L10 0 9.19 6.59 2 7.19l5.46 3.76L5.82 18 10 15.27z"/>
+                    </svg>
+                  </template>
                 </div>
   
                 <div class="text-base line-clamp-2 font-extrabold text-slate-500 leading-snug">
