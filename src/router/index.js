@@ -1,5 +1,5 @@
 // src/router/index.js
-import { createRouter, createWebHistory } from 'vue-router'; // Only import once
+import { createRouter, createWebHistory } from 'vue-router'; 
 import ProductList from '../components/ProductList.vue'
 import ProductDetail from '../pages/ProductDetail.vue'
 
