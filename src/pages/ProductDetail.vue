@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-4">
-    <button @click="goBack" class="mb-4">Back</button>
+    <button @click="goBack" class="back-button mb-4">Back</button>
     <div v-if="loading" class="text-center">Loading...</div>
     <div v-else>
       <h1 class="text-2xl">{{ product.title }}</h1>
@@ -40,3 +40,17 @@ export default {
   },
   };
   </script>
+
+<style scoped>
+.back-button {
+  background-color: blue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+.back-button:hover {
+  background-color: lightblue;
+}
+</style>
