@@ -7,7 +7,7 @@ Hi there! Welcome to my E-Commerce Store Application. This project is a demo e-c
 
 Here's a sneak peek at what the app looks like:
 
-![App Preview](store.png)
+![![App Preview](public/store.png)]
 
 ## Technologies Used
 
